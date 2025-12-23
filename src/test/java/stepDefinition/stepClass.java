@@ -58,7 +58,12 @@ public class stepClass extends baseClass {
     }
 
     @Given("click the price button")
-    public void clickThePriceButton() {
+    public void clickThePriceButton() throws InterruptedException {
+        BusPage.ACButton();
+        BusPage.SleeperButton();
+//        BusPage.TimerButton();
+//        Thread.sleep(3000);
+
         BusPage.PriceButton();
 
     }

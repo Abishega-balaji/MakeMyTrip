@@ -14,6 +14,7 @@ public class passengerClass extends baseClass {
     public By State=By.xpath("(//li[@class='dropdownListWpr__liItem '])");
     public By Confirmation=By.xpath("//span[@class='checkboxWpr']");
     public By PaymentContinue=By.xpath("//div[@class='paymentBtn whiteText latoBold font16 capText']//span");
+    public By option=By.xpath("(//span[@class='sc-btzYZH fJUzix'])[2]");
 
 
 
@@ -49,7 +50,7 @@ public void passengerMobile(String pMobile){
 
 public void passengerStateCheckbox(){
     scrollDown(1500);
-
+//<------May be used if "State" is for other states"---------->
 //    WebElement StateSelection = driver.findElement(State);
 //    click(StateSelection);
 
@@ -57,6 +58,9 @@ public void passengerStateCheckbox(){
     click(ConfirmationCheck);
 
     scrollDown(500);
+
+    WebElement options = driver.findElement(option);
+    click(options);
 
     WebElement PaymentContinueButton = driver.findElement(PaymentContinue);
     click(PaymentContinueButton);

@@ -14,7 +14,7 @@ public class homePage extends baseClass {
     public By cityTwo = By.xpath("//input[@title='To']");
     public By ToPlace = By.xpath("(//li[@role='option'])[1]");
     public By TDate = By.xpath("//input[@id='travelDate']");
-    public By Date = By.xpath("(//div[@class='DayPicker-Day'])[17]");
+    public By Date = By.xpath("(//div[@class='DayPicker-Day'])[1]");
     public By Search=By.xpath("//button[@type='button']");
 
 
@@ -46,9 +46,10 @@ public class homePage extends baseClass {
         click(StartLocation);
     }
     public void ToLocation(String toLocation) throws InterruptedException {
+//        <------May be used if "TO" tab is not auto selected"---------->
 //    WebElement ToCity = driver.findElement(To);
 //    click(ToCity);
-        Thread.sleep(2000);
+        Thread.sleep(3000);
         WebElement EndCity = driver.findElement(cityTwo);
         click(EndCity);
         sendkeys(EndCity,toLocation);
@@ -58,6 +59,7 @@ public class homePage extends baseClass {
     }
 
     public void TravelDate() throws InterruptedException {
+//        <------May be used if "Date" tab is not auto selected"---------->
 //    WebElement TravelDay = driver.findElement(TDate);
 //    click(TravelDay);
         Thread.sleep(3000);

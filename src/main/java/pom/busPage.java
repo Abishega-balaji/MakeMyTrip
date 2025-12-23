@@ -12,10 +12,36 @@ public class busPage extends baseClass {
     public By Pickup=By.xpath("(//div[@class='makeFlex PickUpDropSelection_pickDropItem__YQFG2 '])[1]");
     public By Drop=By.xpath("(//div[@class='PickUpDropSelection_pickDropContainer__VSr2j'])[2]//div[@class='makeFlex PickUpDropSelection_pickDropItem__YQFG2 ']");
     public By Continue=By.xpath("(//button[@class='Button_button__gV4kP Button_primary__AcOJE undefined'])[2]");
+    public By AC=By.xpath("(//div[@class='FilterTabs_tabSection__DfwGX '])[1]");
+    public By Sleeper=By.xpath("//span[@class='sleeperIcon appendRight5']");
+    public By PickUpTime=By.xpath("(//ul[@class='FilterTabs_tabCtr__q44wV FilterTabs_micro__avWY_'])[1]//li");
 
 
-    public void PriceButton(){
+    public void ACButton(){
+        WebElement AcButton = driver.findElement(AC);
+        click(AcButton);
+    }
+
+    public void SleeperButton(){
+        WebElement Sleeperbutton = driver.findElement(Sleeper);
+        click(Sleeperbutton);
+    }
+
+    public void TimerButton() throws InterruptedException {
+
+        WebElement PickUpTimeButton = driver.findElement(PickUpTime);
+        click(PickUpTimeButton);
+        Thread.sleep(1000);
+        scrollDown(100);
+
+
+    }
+
+
+    public void PriceButton() throws InterruptedException {
         WebElement priceRate = driver.findElement(Price);
+        Thread.sleep(3000);
+        scrollDown(-7000);
         click(priceRate);
 
     }
